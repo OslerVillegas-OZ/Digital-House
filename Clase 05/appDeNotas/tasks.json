@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "calculadora",
+    "estado": "terminada"
+  },
+  {
+    "titulo": "Practica For",
+    "estado": "progeso"
+  },
+  {
+    "titulo": "Practica JSON",
+    "estado": "pendiente"
+  },
+  {
+    "titulo": "callbacks",
+    "estado": "terminada"
+  },
+  {
+    "titulo": "objDate",
+    "estado": "pendiente"
+  }
+]

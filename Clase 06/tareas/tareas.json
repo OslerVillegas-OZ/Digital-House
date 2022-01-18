@@ -1,0 +1,38 @@
+[
+  {
+    "titulo": "Repasar JS",
+    "estado": "terminada"
+  },
+  {
+    "titulo": "Armar aplicación de Tareas",
+    "estado": "en progreso"
+  },
+  {
+    "titulo": "Break",
+    "estado": "pendiente"
+  },
+  {
+    "titulo": "Methos",
+    "estado": "terminada"
+  },
+  {
+    "titulo": "Callback",
+    "estado": "pendiente"
+  },
+  {
+    "titulo": "Objeto Date()",
+    "estado": "en progreso"
+  },
+  {
+    "titulo": "For...of",
+    "estado": "terminada"
+  },
+  {
+    "titulo": "For...in",
+    "estado": "pendiente"
+  },
+  {
+    "titulo": "forEach()",
+    "estado": "pendiente"
+  }
+]
