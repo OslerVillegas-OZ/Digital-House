@@ -15,8 +15,8 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		// Do the magic
-		res.render('detail', { product: products[req.params.id - 1] });
+		// Do the magic;
+		res.render('detail', { product: products[products.findIndex(product => product.id == req.params.id)] });
 	},
 
 	// Create - Form to create
@@ -79,15 +79,13 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		// Do the magic
-		let productToDeleteIndex = products.find(product => product.id = req.params.id)
+		let productToDeleteIndex = products.findIndex(product => product.id == req.params.id)
 
-		//products.splice(productToDeleteIndex, 1);
+		products.splice(productToDeleteIndex, 1);
 
-		//fs.writeFileSync(productsFilePath, JSON.stringify(products));
-		
-		//res.redirect('/products/');
-
-		res.send(productToDeleteIndex)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products));
+	
+		res.redirect('/products')
 	}
 };
 
