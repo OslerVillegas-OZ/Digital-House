@@ -2,6 +2,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const Movie = require('../database/models/Movie');
 
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
@@ -72,16 +73,47 @@ const moviesController = {
 			})
     },
     edit: function(req,res) {
+			let reqMovie = Movies.findByPk(req.params.id);
 
+			let reqGenres = Genres.findAll();
+
+			Promise.all([reqMovie, reqGenres])
+			.then(([Movie, allGenres]) => {
+				res.render('moviesEdit', { Movie: Movie, allGenres: allGenres});
+			})
     },
     update: function (req,res) {
+			Movies.update({ 
+				title: req.body.title,
+				rating: req.body.rating,
+				awards: req.body.awards,
+				relese_date: req.body.release_date,
+				length: req.body.length,
+				genre_ide: req.body.genre_id
+			}, {
+				where: {
+					id: req.params.id,
+				}
+			}).then( () => {
+				res.redirect('/movies/detail/' + req.params.id)
+			})
 
     },
     delete: function (req,res) {
-
+			Movies.findByPk(req.params.id)
+			.then( (movie) => {
+				res.render('moviesDelete', {Movie: movie})
+			})
+			
     },
     destroy: function (req,res) {
-
+			Movies.destroy({
+				where: {
+					id: req.params.id
+				}
+			}).then(() => {
+				res.redirect('/movies')
+			})
     }
 }
 
