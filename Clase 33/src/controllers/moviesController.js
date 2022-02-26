@@ -23,7 +23,7 @@ const moviesController = {
     },
     'detail': (req, res) => {
         db.Movie.findByPk(req.params.id)
-            .then(movie => {
+  	          .then(movie => {
                 res.render('moviesDetail.ejs', {movie});
             });
     },
