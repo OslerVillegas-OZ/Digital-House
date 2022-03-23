@@ -36,18 +36,13 @@ h2.forEach( h => {
 })
 */
 
-
 anchors.forEach( a => {
 	a.style.color = '#E51B3E';
 })
 
-
-
 confirm('Desea colocar un fondo de pantalla?') ? body.classList.add('fondo') : null;
 
-
 document.querySelectorAll('p:nth-child(2n)').forEach( p => { p.classList.add('destacadoPar')})
-
 
 document.querySelectorAll('p:nth-child(2n+1)').forEach( p => { p.classList.add('destacadoImpar')})
 
